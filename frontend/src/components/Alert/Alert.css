@@ -1,0 +1,22 @@
+.alert-text {
+    font-size: 120%;
+    font-weight: 500;
+}
+
+.alert-button {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.alert-btn {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.alert-btn-primary {
+    background-color: #094e9d;
+    color: white;
+}

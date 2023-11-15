@@ -37,10 +37,10 @@ function MyProfile() {
     setLoading(true);
     const formData = new FormData();
     formData.append("file", img);
-    formData.append("upload_preset", "quincey");
+    formData.append("upload_preset", "huyen11");
 
     await axios
-      .post("https://api.cloudinary.com/v1_1/dz2fcqjpg/image/upload", formData)
+      .post("https://api.cloudinary.com/v1_1/ddxmjevml/image/upload", formData)
       .then((response) => {
         setUrlImg(response.data.url);
         handleChange("avatar", response.data.url);

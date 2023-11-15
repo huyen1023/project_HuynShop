@@ -80,11 +80,11 @@ function ProductAddForm(props) {
     if (isChooseFile) {
       const formData = new FormData();
       formData.append("file", image);
-      formData.append("upload_preset", "quincey");
+      formData.append("upload_preset", "huyen11");
 
       await axios
         .post(
-          "https://api.cloudinary.com/v1_1/dz2fcqjpg/image/upload",
+          "https://api.cloudinary.com/v1_1/ddxmjevml/image/upload",
           formData
         )
         .then((response) => {

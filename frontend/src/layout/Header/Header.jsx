@@ -51,7 +51,7 @@ function Header(props) {
             className={
               selected == "mail" ? "btn-icon btn-icon-focus" : "btn-icon"
             }
-            title="quyennt.201@gmail.com"
+            title="huyennguyen101001@gmail.com"
             onClick={() => {
               // setSelected("mail");
               settingToastMess("info", "The skill is improving")
@@ -71,7 +71,7 @@ function Header(props) {
             }}
             onClick={() => setSelected("")}
           >
-            QUINCEY
+            HUYNSHOP
           </Link>
         </div>
         <div className="logo-right">

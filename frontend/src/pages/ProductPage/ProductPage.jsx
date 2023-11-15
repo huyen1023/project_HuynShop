@@ -37,6 +37,7 @@ function ProductPage() {
     setLoading(true);
     let res = {};
     if (name) {
+      setCategory(name)
       res = await productService.getProductByName(name);
     } else {
       res = await productService.getProducts();
@@ -72,11 +73,10 @@ function ProductPage() {
     setTimeout(() => {
       setLoading(false)
     }, 500);
-    const res1 = handleSearchType(product)
-    const res2 = handleSearchTrademark(res1);
-    const res3 = handleSearchCategory(res2)
-    const res4 = handleSearchPrice(res3)
-    setData(res4);
+    let res = handleSearchType(product)
+    res = handleSearchCategory(res)
+    res = handleSearchPrice(res)
+    setData(res);
   };
 
   const handleClear = () => {
@@ -161,7 +161,7 @@ function ProductPage() {
             ))}
           </form>
         </div>
-        <div className="product-search-item">
+        {/* <div className="product-search-item">
           <form>
             <p className="p-title">Trademark</p>
             {TRADEMARK.map((tr) => (
@@ -180,7 +180,7 @@ function ProductPage() {
               </div>
             ))}
           </form>
-        </div>
+        </div> */}
         <div className="product-search-item">
           <p className="p-title">Price</p>
           <Slider

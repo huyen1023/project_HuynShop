@@ -13,7 +13,7 @@ function Footer() {
         <i class="fab fa-github icon"></i>
       </div>
       <div className="footer-copyright">
-        <i class="fas fa-copyright"></i> 2023 QuyenQuyen
+        <i class="fas fa-copyright"></i> 2023 HuyenNguyen
       </div>
     </div>
   );

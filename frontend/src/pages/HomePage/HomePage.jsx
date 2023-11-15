@@ -11,6 +11,7 @@ import { fadeImages } from "../../datas/DATA";
 import { loadingState } from "../../recoil/LoadingState";
 import { useSetRecoilState, useRecoilState } from "recoil";
 import ViewMore from "../../components/ViewMore/ViewMore";
+import { NavLink } from "react-router-dom";
 
 function HomePage() {
   const [data, setData] = useState([]);
@@ -32,7 +33,7 @@ function HomePage() {
       <div className="homepage">
         <div className="category">
           <div className="category-title">Shop By Category</div>
-          <div className="category-shop">
+          {/* <div className="category-shop">
             <CardCategoryShop img={imgDefault.imgMen} text="Men" path="/product/men" />
             <CardCategoryShop
               img={imgDefault.imgWomen}
@@ -46,17 +47,27 @@ function HomePage() {
               text="Men"
               path="/product/men"
             />
-          </div>
+          </div> */}
           <div className="category-name">
-            <CardCategoryName img={imgDefault.imgJean} text="jean" />
+            <NavLink to={"/product/jean"}>
+              <CardCategoryName img={imgDefault.imgJean} text="jean" />
+            </NavLink>
+            <NavLink to={"/product/hoodie"}>
             <CardCategoryName img={imgDefault.imgHoodie} text="hoodie" />
+            </NavLink>
+            <NavLink to={"/product/dress"}>
             <CardCategoryName img={imgDefault.imgDress} text="dress" />
+            </NavLink>
+            <NavLink to={"/product/shirt"}>
             <CardCategoryName img={imgDefault.imgShirt} text="shirt" />
+            </NavLink>
+            <NavLink to={"/product/t-shirt"}>
             <CardCategoryName img={imgDefault.imgTShirt} text="t-shirt" />
+            </NavLink>
           </div>
         </div>
         <FlashSale />
-        <ViewMore title="Discover More" max={12} isButton={true} />
+        <ViewMore title="Discover More" max={6} isButton={true} />
       </div>
     </div>
   );

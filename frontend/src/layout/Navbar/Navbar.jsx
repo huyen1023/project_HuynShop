@@ -61,7 +61,7 @@ function Navbar(props) {
                 className={
                   selected == "product" ? "menu-btn menu-btn-focus" : "menu-btn"
                 }
-                // onClick={() => setSelected("product")}
+              // onClick={() => setSelected("product")}
               >
                 Product
               </button>
@@ -71,7 +71,7 @@ function Navbar(props) {
                 className={
                   selected == "history-order" ? "menu-btn menu-btn-focus" : "menu-btn"
                 }
-                // onClick={() => setSelected("history-order")}
+              // onClick={() => setSelected("history-order")}
               >
                 History orders
               </button>
@@ -102,6 +102,7 @@ function Navbar(props) {
               </Link>
             ))}
           </>
+
         )}
 
         {/* <div class="w3-dropdown-hover">
@@ -168,7 +169,7 @@ function Navbar(props) {
                   position: "relative",
                   zIndex: "1",
                 }}
-                // onClick={() => setSelected("shopping-cart")}
+              // onClick={() => setSelected("shopping-cart")}
               >
                 <i class="far fa-shopping-cart"></i>
                 {userLogin && (

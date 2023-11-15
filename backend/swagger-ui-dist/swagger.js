@@ -19,7 +19,7 @@ const options = {
     },
     servers: [
       {
-        url: "https://be-quincey.vercel.app/api/v1",
+        url: "localhost:8080/api/v1",
         description: "My API Documentation",
       },
     ],

@@ -17,7 +17,6 @@ const paymentController = {
         let tmnCode = "4GK0B1M3";
         let secretKey = "CUNIJVGXSLTFKRNHSCKKDDDYEPFELUJT";
         let vnpUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        // let returnUrl = "https://fe-quincey.vercel.app/checkout";
         let returnUrl = "http://localhost:3000/checkout";
         let orderId = moment(date).format('DDHHmmss');
         let amount = req.body.amount;

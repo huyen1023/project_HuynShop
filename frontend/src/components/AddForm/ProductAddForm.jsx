@@ -228,7 +228,7 @@ function ProductAddForm(props) {
             options={CATEGORY}
             value={{ value: product?.category, label: product?.category }}
             onChange={(value) =>
-              handleChange("category", value?.value.toLowerCase())
+              handleChange("category", value?.value?.toLowerCase())
             }
           />
           <Checkbox
@@ -237,7 +237,7 @@ function ProductAddForm(props) {
             options={[{ value: true, label: "female" }, { value: false, label: "male" }]}
             value={{ value: product?.suitableGender, label: product?.suitableGender ? "female" : "male" }}
             onChange={(value) =>
-              handleChange("suitableGender", value?.value.toLowerCase())
+              handleChange("suitableGender", value?.value)
             }
           />
         </div>
@@ -248,7 +248,7 @@ function ProductAddForm(props) {
             options={STYLE}
             value={{ value: product?.style, label: product?.style }}
             onChange={(value) =>
-              handleChange("style", value?.value.toLowerCase())
+              handleChange("style", value?.value?.toLowerCase())
             }
           />
           <Checkbox
@@ -257,7 +257,7 @@ function ProductAddForm(props) {
             options={TYPE}
             value={{ value: product?.type, label: product?.type }}
             onChange={(value) =>
-              handleChange("type", value?.value.toLowerCase())
+              handleChange("type", value?.value?.toLowerCase())
             }
           />
         </div>

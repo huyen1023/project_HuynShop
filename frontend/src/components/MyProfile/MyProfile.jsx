@@ -94,6 +94,13 @@ function MyProfile() {
             value={user?.phonenumber}
             onChange={(e) => handleChange("phonenumber", e.target.value)}
           />
+          <Input
+            label="age"
+            type="number"
+            style={{ width: "500px" }}
+            value={user?.age}
+            onChange={(e) => handleChange("age", e.target.value)}
+          />
           <label>
             <input
               type="radio"

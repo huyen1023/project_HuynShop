@@ -100,11 +100,11 @@ function PopupCart(props) {
           <div className="i-general-infor-form">
             <p className="i-label">quantity</p>
             <div className="i-input-quantity">
-              <button className="i-input-select" onClick={handleClickDecrease}>
+              <button className="i-input-select" onClick={handleClickDecrease} disabled={quantity <= 1 ? true : false}>
                 <i class="fas fa-minus"></i>
               </button>
               <input type="text" className="i-input-display" value={quantity} />
-              <button className="i-input-select" onClick={handleClickIncrease}>
+              <button className="i-input-select" onClick={handleClickIncrease}  disabled={quantity >= data.inventory ? true : false}>
                 <i class="fas fa-plus"></i>
               </button>
             </div>

@@ -40,7 +40,8 @@ function Navbar(props) {
 
   const getOrders = async () => {
     const res = await orderService.getOrders();
-    setPending(res?.data.reduce((sum, { status }) => {
+    // console.log(res?.data)
+    setPending(res?.data?.reduce((sum, { status }) => {
       if (status == "00") {
         return sum + 1;
       } else return sum;

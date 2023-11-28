@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema(
         //   type: Boolean,
         //   default: false
         // }
-      }, 
+      },
     ],
     phonenumber: String,
     avatar: {
@@ -27,8 +27,9 @@ const userSchema = new mongoose.Schema(
     },
     gender: {
       type: Boolean,
-      default: true,
+      default: true, // true -> female
     },
+    age: Number,
     admin: {
       type: Boolean,
       default: false,

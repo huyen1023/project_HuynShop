@@ -12,7 +12,10 @@ const orderService = {
   },
   updateOrder: (id, order) => {
     return axiosConfig.put(`order/${id}`, order)
-  }
+  },
+  confirmOrder: (order) => {
+    return axiosConfig.post(`order/confirm`, order)
+  },
 };
 
 export default orderService;

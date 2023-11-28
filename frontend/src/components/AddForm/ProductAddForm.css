@@ -129,3 +129,19 @@ input[type="file"]::file-selector-button {
     margin-top: 50px;
     margin-left: 15px;
 }
+
+.suitable-age {
+    height: 90px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.p-suitable-age {
+    height: 36px;
+    width: 50px;
+    border: 1px solid var(--border-color);
+    margin: 0 10px;
+    border-radius: 5px;
+    padding: 5px;
+}

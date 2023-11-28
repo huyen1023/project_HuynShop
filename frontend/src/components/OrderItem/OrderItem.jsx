@@ -26,6 +26,7 @@ function OrderItem(props) {
     setLoading(true);
     setNewOrder({ ...newOrder, status: "11" });
     await orderService.updateOrder(order._id, { ...newOrder, status: "11" });
+    await orderService.confirmOrder(order);
     setIsClickPopup(!isClickPopup);
     setIsPopup(false);
     setLoading(false);

@@ -84,7 +84,8 @@ function DetailInformation() {
       item == "trademark" ||
       item == "style" ||
       item == "origin" ||
-      item == "inventory"
+      item == "inventory" || 
+      item == "sold"
   );
 
   const getPriceSale = () => {
@@ -216,6 +217,7 @@ function DetailInformation() {
                 <button
                   className="i-input-select"
                   onClick={handleClickDecrease}
+                  disabled={quantity <= 1 ? true : false}
                 >
                   <i class="fas fa-minus"></i>
                 </button>
@@ -227,6 +229,7 @@ function DetailInformation() {
                 <button
                   className="i-input-select"
                   onClick={handleClickIncrease}
+                  disabled={quantity >= data.inventory ? true : false}
                 >
                   <i class="fas fa-plus"></i>
                 </button>

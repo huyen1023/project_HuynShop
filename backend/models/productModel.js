@@ -23,6 +23,9 @@ const productSchema = new mongoose.Schema(
       default: false,
     },
     percent: Number,
+    minSuitableAge: Number,
+    maxSuitableAge: Number,
+    suitableGender: Boolean,
   },
   { timestamps: true }
 );

@@ -3,6 +3,7 @@ import "./HomePage.css";
 import CardCategoryShop from "../../components/Card/CardCategoryShop";
 import CardCategoryName from "../../components/Card/CardCategoryName";
 import FlashSale from "../../components/FlashSale/FlashSale";
+import Suggestion from "../../components/FlashSale/Suggestion";
 import CardItem from "../../components/Card/CardItem";
 import SlideShow from "../../components/SlideShow/SlideShow";
 import imgDefault from "../../datas/ImgDefault";
@@ -53,20 +54,21 @@ function HomePage() {
               <CardCategoryName img={imgDefault.imgJean} text="jean" />
             </NavLink>
             <NavLink to={"/product/hoodie"}>
-            <CardCategoryName img={imgDefault.imgHoodie} text="hoodie" />
+              <CardCategoryName img={imgDefault.imgHoodie} text="hoodie" />
             </NavLink>
             <NavLink to={"/product/dress"}>
-            <CardCategoryName img={imgDefault.imgDress} text="dress" />
+              <CardCategoryName img={imgDefault.imgDress} text="dress" />
             </NavLink>
             <NavLink to={"/product/shirt"}>
-            <CardCategoryName img={imgDefault.imgShirt} text="shirt" />
+              <CardCategoryName img={imgDefault.imgShirt} text="shirt" />
             </NavLink>
             <NavLink to={"/product/t-shirt"}>
-            <CardCategoryName img={imgDefault.imgTShirt} text="t-shirt" />
+              <CardCategoryName img={imgDefault.imgTShirt} text="t-shirt" />
             </NavLink>
           </div>
         </div>
         <FlashSale />
+        <Suggestion />
         <ViewMore title="Discover More" max={6} isButton={true} />
       </div>
     </div>

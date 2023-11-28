@@ -73,10 +73,12 @@ function ProductPage() {
     setTimeout(() => {
       setLoading(false)
     }, 500);
-    let res = handleSearchType(product)
-    res = handleSearchCategory(res)
-    res = handleSearchPrice(res)
-    setData(res);
+    const res1 = handleSearchType(product)
+    console.log(res1);
+    const res2 = handleSearchTrademark(res1);
+    const res3 = handleSearchCategory(res2)
+    const res4 = handleSearchPrice(res3)
+    setData(res4);
   };
 
   const handleClear = () => {

@@ -214,6 +214,13 @@ function ProductAddForm(props) {
             <i class="fas fa-redo-alt"></i>
           </button>
         </div>
+        <div className="suitable-age">
+          <p style={{ fontWeight: 600, textTransform: "capitalize", marginRight: 10 }}>suitable age: </p>
+          From
+          <input type="number" className="p-suitable-age p-age-min" value={product?.minSuitableAge} onChange={(e) => handleChange("minSuitableAge", e.target.value)} />
+          to
+          <input type="number" className="p-suitable-age p-age-max" value={product?.maxSuitableAge} onChange={(e) => handleChange("maxSuitableAge", e.target.value)} />
+        </div>
         <div style={{ display: "flex" }}>
           <Checkbox
             isMulti={false}
@@ -226,11 +233,11 @@ function ProductAddForm(props) {
           />
           <Checkbox
             isMulti={false}
-            label="trademark"
-            options={TRADEMARK}
-            value={{ value: product?.trademark, label: product?.trademark }}
+            label="suitable gender"
+            options={[{ value: true, label: "female" }, { value: false, label: "male" }]}
+            value={{ value: product?.suitableGender, label: product?.suitableGender ? "female" : "male" }}
             onChange={(value) =>
-              handleChange("trademark", value?.value.toLowerCase())
+              handleChange("suitableGender", value?.value.toLowerCase())
             }
           />
         </div>

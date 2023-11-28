@@ -1,5 +1,6 @@
 const Order = require("../models/orderModel");
 const User = require("../models/userModel");
+const Product = require("../models/productModel");
 
 const exception = (e) => {
   return {
@@ -52,6 +53,19 @@ const orderController = {
       res
         .status(201)
         .json({ message: "Create order successfully!", data: order });
+    } catch (e) {
+      res.status(500).json(exception(e));
+    }
+  },
+
+  confirmOrder: async (req, res) => {
+    try {
+      const {items} = req.body;
+      for (let index = 0; index < items.length; index++) {
+        const element = items[index];
+        await Product.findByIdAndUpdate(element.product._id, { $inc: {sold: element.quantity, inventory: -element.quantity } });
+      }
+      res.status(200).json({ message: "Confirm order", data: ""})  
     } catch (e) {
       res.status(500).json(exception(e));
     }

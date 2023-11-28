@@ -3,7 +3,7 @@ const Product = require("../models/productModel");
 const exception = (e) => {
   return {
     error: "An error occurred!",
-    data: e,
+    data: e.message,
   };
 };
 
@@ -85,6 +85,17 @@ const productController = {
     try {
       const res = await Product.find({ category: req.body.category });
       res.status(200).json({ message: "Search success", data: res });
+    } catch (e) {
+      res.status(500).json(exception(e));
+    }
+  },
+
+  searchForSuggestions: async (req, res) => {
+    try {
+      const { gender, age } = req.body;
+      const products = await Product.find({ suitableGender: { $eq: gender } })
+      products.filter(product => product.minSuitableAge <= age && product.maxSuitableAge >= age)
+      res.status(200).json({ message: "Search success", data: products });
     } catch (e) {
       res.status(500).json(exception(e));
     }

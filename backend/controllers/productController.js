@@ -38,6 +38,7 @@ const productController = {
     }
   },
 
+
   getBySale: async (req, res) => {
     try {
       const products = await Product.find({ sale: true });
@@ -94,8 +95,8 @@ const productController = {
     try {
       const { gender, age } = req.body;
       const products = await Product.find({ suitableGender: { $eq: gender } })
-      products.filter(product => product.minSuitableAge <= age && product.maxSuitableAge >= age)
-      res.status(200).json({ message: "Search success", data: products });
+      const result = products.filter(product => product.minSuitableAge <= age && product.maxSuitableAge >= age)
+      res.status(200).json({ message: "Search success", data: result });
     } catch (e) {
       res.status(500).json(exception(e));
     }

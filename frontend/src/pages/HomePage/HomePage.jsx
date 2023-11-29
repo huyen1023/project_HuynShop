@@ -10,13 +10,13 @@ import imgDefault from "../../datas/ImgDefault";
 import productService from "../../services/ProductService";
 import { fadeImages } from "../../datas/DATA";
 import { loadingState } from "../../recoil/LoadingState";
-import { useSetRecoilState, useRecoilState } from "recoil";
+import { userState } from "../../recoil/UserState";
+import { useRecoilValue } from "recoil";
 import ViewMore from "../../components/ViewMore/ViewMore";
 import { NavLink } from "react-router-dom";
 
 function HomePage() {
-  const [data, setData] = useState([]);
-  const setLoading = useSetRecoilState(loadingState);
+  const user = useRecoilValue(userState);
 
   return (
     <div>
@@ -68,7 +68,7 @@ function HomePage() {
           </div>
         </div>
         <FlashSale />
-        <Suggestion />
+        {user && <Suggestion />}
         <ViewMore title="Discover More" max={6} isButton={true} />
       </div>
     </div>

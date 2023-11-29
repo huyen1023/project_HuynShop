@@ -14,7 +14,7 @@ function Suggestion() {
 
   const getData = async () => {
     setLoading(true);
-    const res = await productService.getProductSuggestions(user.gender, user.age);
+    const res = await productService.getProductSuggestions(user?.gender, user?.age);
     // console.log(res.data)
     if(res?.data?.length > 6) {
       setDatas(res?.data?.filter((data, idx) => {
